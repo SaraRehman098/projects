@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>result</title>
+  </head>
+  <body>
+    <h1>result card</h1>
+    <form>
+      <label for="phy">physis</label>
+      <input type="number" placeholder="write passing marks " id="phy1" /><br />
+      <label for="urd">urdu</label>
+      <input type="number" placeholder="write passing marks " id="urd2" /><br />
+      <label for="eng">English</label>
+      <input type="number" placeholder="write passing marks " id="eng" /><br />
+    </form>
+    <button type="submit" onClick="resultprinter()">
+      Check Your Result Here
+    </button>
+    <h3 id="res"></h3>
+
+    <script>
+      function resultprinter() {
+        get_phy_marks = Number(document.getElementById("phy1").value);
+        urd_marks = Number(document.getElementById("urd2").value);
+        eng_marks = Number(document.getElementById("eng").value);
+
+        total_obtain_marks = get_phy_marks + urd_marks + eng_marks;
+        res = (total_obtain_marks / 300) * 100;
+        if (res >= 90) {
+          document.getElementById("res").innerHTML =
+            "your grade is A. percentage = " + res + "%";
+        } else if (res >= 80) {
+          document.getElementById("res").innerHTML =
+            "your grade is B. percentage = " + res + "%";
+        } else if (res >= 70) {
+          document.getElementById("res").innerHTML =
+            "your grade is c. percentage = " + res + "%";
+        } else if (res >= 60) {
+          document.getElementById("res").innerHTML =
+            "your grade is d. percentage = " + res + "%";
+        } else if (res >= 50) {
+          document.getElementById("res").innerHTML =
+            "your are fail. percentage = " + res + "%";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="change">Bill Calculator</h1>
+    <label for="bp">Bill Percentage</label>
+    <input type="text" placeholder="Enter your Bill Percentage" id="bp1" />
+    <br />
+    <label for="np">No of people</label>
+    <input type="text" placeholder="Enter your No of people" id="np2" />
+    <br />
+    <label for="tb">Total Bill</label>
+    <input type="text" placeholder="Enter Total Bill" id="tb3" />
+    <br />
+    <button type="submit" onclick="billprinter()">check your bill</button>
+
+    <script src="index.js"></script>
+
+    <script>
+      function billprinter() {
+        // alert("hello");
+        get_bill_percentage = document.getElementById("bp1").value;
+        // alert(get_bill_percentage);
+        no_of_people = document.getElementById("np2").value;
+        // alert(no_of_people);
+        total_bill = document.getElementById("tb3").value;
+        // alert(total_bill);
+
+        res =
+          total_bill + (total_bill + get_bill_percentage) / 100 / no_of_people;
+        alert(res);
+        document.getElementById("change").innerHTML = "your bill is" + res;
+        console.log(res);
+      }
+    </script>
+  </body>
+</html>

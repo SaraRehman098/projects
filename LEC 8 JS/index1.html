@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Full Student Marksheet Calculator</title>
+  </head>
+  <body>
+    <h2>Student Marksheet & Grade Calculator</h2>
+
+    <!-- Har subject ke marks input karne ke liye fields -->
+    <label>English: </label>
+    <input type="number" id="sub1" placeholder="Max 100" /><br /><br />
+
+    <label>Maths: </label>
+    <input type="number" id="sub2" placeholder="Max 100" /><br /><br />
+
+    <label>Physics: </label>
+    <input type="number" id="sub3" placeholder="Max 100" /><br /><br />
+
+    <label>Chemistry: </label>
+    <input type="number" id="sub4" placeholder="Max 100" /><br /><br />
+
+    <label>Urdu/Computer: </label>
+    <input type="number" id="sub5" placeholder="Max 100" /><br /><br />
+
+    <!-- Calculate karne ka button -->
+    <button onclick="calculateMarksheet()">Calculate Result</button>
+
+    <!-- Final result show karne ke liye headings -->
+    <h3 id="totalScore"></h3>
+    <h3 id="percentageScore"></h3>
+    <h3 id="gradeScore"></h3>
+
+    <script>
+      function calculateMarksheet() {
+        // 1. Saare inputs se values nikal kar numbers me badalna
+        let eng = Number(document.getElementById("sub1").value);
+        let math = Number(document.getElementById("sub2").value);
+        let phys = Number(document.getElementById("sub3").value);
+        let chem = Number(document.getElementById("sub4").value);
+        let urdu = Number(document.getElementById("sub5").value);
+
+        // 2. Validation: Check karna koi input khali na ho ya marks 0-100 se bahar na hon
+        if (
+          eng < 0 ||
+          eng > 100 ||
+          math < 0 ||
+          math > 100 ||
+          phys < 0 ||
+          phys > 100 ||
+          chem < 0 ||
+          chem > 100 ||
+          urdu < 0 ||
+          urdu > 100
+        ) {
+          alert(
+            "Plz saare subjects me 0 se 100 ke beech sahi marks enter karein!",
+          );
+          return;
+        }
+
+        // 3. Total aur Percentage calculate karna (Total marks = 500)
+        let totalObtained = eng + math + phys + chem + urdu;
+        let percentage = (totalObtained / 500) * 100;
+        let grade = "";
+
+        // 4. If-Else Condition Percentage ke hisab se Grade nikalne ke liye
+        if (percentage >= 80) {
+          grade = "A-One (Excellent)";
+        } else if (percentage >= 70) {
+          grade = "A (Very Good)";
+        } else if (percentage >= 60) {
+          grade = "B (Good)";
+        } else if (percentage >= 50) {
+          grade = "C (Satisfactory)";
+        } else if (percentage >= 40) {
+          grade = "D (Pass)";
+        } else {
+          grade = "F (Fail) - Fail, Mehnat ki zaroorat hai!";
+        }
+
+        // 5. Result ko screen par print (display) karwana
+        document.getElementById("totalScore").innerText =
+          "Total Marks: " + totalObtained + " / 500";
+        document.getElementById("percentageScore").innerText =
+          "Percentage: " + percentage.toFixed(2) + "%";
+        document.getElementById("gradeScore").innerText =
+          "Final Grade: " + grade;
+      }
+    </script>
+  </body>
+</html>

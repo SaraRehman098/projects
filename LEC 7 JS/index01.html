@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Student Result Form</h1>
+    <form>
+      <label for="eng">English</label>
+      <input
+        type="number"
+        placeholder="enter your eng marks here. "
+        id="eng1"
+      /><br />
+      <label for="math">Mathematics</label>
+      <input
+        type="number"
+        placeholder="enter your Math marks here."
+        id="math2"
+        .
+      /><br />
+      <label for="urdu">Urdu</label>
+      <input
+        type="number"
+        placeholder="enter your urdu marks here."
+        id="urd3"
+      /><br />
+      <label for="physics">physics</label>
+      <input
+        type="number"
+        placeholder="enter your physics marks here."
+        id="phy4"
+      /><br />
+    </form>
+    <button type="submit" onClick="Resultprinter()">check res</button>
+    <h3 id="res"></h3>
+
+    <script>
+      function Resultprinter() {
+        get_eng_marks = +document.getElementById("eng1").value;
+        math_marks = +document.getElementById("math2").value;
+        urdu_marks = +document.getElementById("urd3").value;
+        physics_marks = +document.getElementById("phy4").value;
+
+        total_obtained =
+          get_eng_marks + math_marks + urdu_marks + physics_marks;
+        res = (total_obtained / 400) * 400;
+        alert(res);
+        document.getElementById("res").innerHTML = "result is " + res;
+      }
+    </script>
+  </body>
+</html>
