@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>FreshMart Grocery</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">Fresh<span>Mart</span></div>
+      <div class="cart">🛒 Cart: <span id="cartCount">0</span></div>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <h1>Fresh Groceries Delivered To Your Door</h1>
+
+        <p>
+          Shop fresh fruits, vegetables, dairy products and everyday essentials
+          at the best prices.
+        </p>
+
+        <a href="#products" class="btn"> Shop Now </a>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+      <h2>Our Popular Products</h2>
+
+      <div class="product-container">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <img
+            src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=500"
+            alt="Fresh Fruits"
+          />
+
+          <h3>Fresh Fruits</h3>
+
+          <p>Fresh and healthy fruits for your family.</p>
+          <h4>Rs. 500</h4>
+
+          <button class="cart-btn" data-name="Product 1" data-price="500">
+            Add to Cart
+          </button>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+          <img
+            src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=500"
+            alt="Vegetables"
+          />
+
+          <h3>Fresh Vegetables</h3>
+
+          <p>Farm fresh vegetables delivered daily.</p>
+
+          <button class="cart-btn" data-name="Product 2" data-price="500">
+            Add to Cart
+          </button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+          <img
+            src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=500"
+            alt="Dairy Products"
+          />
+
+          <h3>Dairy Products</h3>
+
+          <p>Fresh milk, cheese and other dairy items.</p>
+          <h4>Rs. 500</h4>
+
+          <button class="cart-btn" data-name="Product 3" data-price="500">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+      <h2>Shop By Category</h2>
+
+      <div class="category-container">
+        <div class="category-card">
+          🍎
+          <h3>Fruits</h3>
+        </div>
+
+        <div class="category-card">
+          🥦
+          <h3>Vegetables</h3>
+        </div>
+
+        <div class="category-card">
+          🥛
+          <h3>Dairy</h3>
+        </div>
+
+        <div class="category-card">
+          🥖
+          <h3>Bakery</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="about-text">
+        <h2>About FreshMart</h2>
+
+        <p>
+          FreshMart is your trusted online grocery store. We provide fresh,
+          high-quality groceries at affordable prices.
+        </p>
+
+        <p>
+          Our goal is to make grocery shopping simple, fast and convenient for
+          everyone.
+        </p>
+      </div>
+    </section>
+    <section class="cart-section">
+      <h2>Your Shopping Cart</h2>
+
+      <div id="cartItems"></div>
+
+      <h3>Total: Rs. <span id="cartTotal">0</span></h3>
+
+      <button id="checkoutBtn">Checkout</button>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <h2>Contact Us</h2>
+
+      <p>Have a question? We'd love to hear from you!</p>
+
+      <form id="contactForm">
+        <input type="text" placeholder="Your Name" required />
+
+        <input type="email" placeholder="Your Email" required />
+
+        <textarea placeholder="Your Message" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 FreshMart Grocery Store. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
